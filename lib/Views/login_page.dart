@@ -12,7 +12,7 @@ class LoginView extends StatelessWidget {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('username', username);
     await prefs.setString('password', password);
-    Navigator.pushReplacementNamed(context, '/home');
+    Navigator.pushReplacementNamed(context, '/profile');
   }
 
   @override
@@ -22,7 +22,8 @@ class LoginView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text('Login', textAlign: TextAlign.center),
+        automaticallyImplyLeading: false, // Disable the back button
         backgroundColor: Colors.redAccent,
       ),
       body: Padding(
@@ -49,6 +50,12 @@ class LoginView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
+              onSubmitted:
+                  (_) => _login(
+                    context,
+                    usernameController.text,
+                    passwordController.text,
+                  ),
             ),
             const SizedBox(height: 16),
             TextField(
@@ -60,6 +67,12 @@ class LoginView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
+              onSubmitted:
+                  (_) => _login(
+                    context,
+                    usernameController.text,
+                    passwordController.text,
+                  ),
             ),
             const SizedBox(height: 24),
             ElevatedButton(
@@ -80,6 +93,12 @@ class LoginView extends StatelessWidget {
                 'Login',
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
+            ),
+            const SizedBox(height: 24),
+            const Text(
+              'You can use any username and password to log in.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 14, color: Colors.grey),
             ),
           ],
         ),

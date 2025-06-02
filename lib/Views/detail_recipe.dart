@@ -10,7 +10,7 @@ class RecipeDetailView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(recipe.name),
+        title: Text(recipe.name, textAlign: TextAlign.center),
         backgroundColor: Colors.redAccent,
       ),
       body: Padding(
@@ -55,7 +55,16 @@ class RecipeDetailView extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-                ...recipe.instructions.map((s) => Text('• $s')),
+                Expanded(
+                  child: SingleChildScrollView(
+                    physics:
+                        const BouncingScrollPhysics(), // Add scroll animation
+                    child: Text(
+                      recipe.instructions.join('\n'),
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

@@ -12,7 +12,7 @@ class LogoutView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Logout'),
+        title: const Text('Logout', textAlign: TextAlign.center),
         automaticallyImplyLeading: false, // Disable the back button
         backgroundColor: Colors.redAccent,
       ),
@@ -27,7 +27,7 @@ class LogoutView extends StatelessWidget {
             ),
           ),
           child: const Text(
-            'Logout dan kembali ke Login',
+            'Logout',
             style: TextStyle(fontSize: 16, color: Colors.white),
           ),
         ),

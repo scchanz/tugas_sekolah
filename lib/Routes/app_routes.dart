@@ -3,6 +3,7 @@ import 'package:auth/Views/home_page.dart';
 import 'package:auth/Views/profile_page.dart';
 import 'package:auth/Views/logout_page.dart';
 import 'package:auth/Views/login_page.dart';
+import 'package:auth/Widgets/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
@@ -10,7 +11,8 @@ class AppRoutes {
   static const String profile = '/profile';
   static const String logout = '/logout';
   static const String login = '/login';
-  static const String recipeDetail = '/recipeDetail'; // ✅ Tambah ini
+  static const String recipeDetail = '/recipeDetail';
+  static const String splash = '/splash';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -27,6 +29,8 @@ class AppRoutes {
           builder: (_) => const RecipeDetailView(),
           settings: settings,
         );
+      case splash:
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
       default:
         return MaterialPageRoute(builder: (_) => const HomeView());
     }

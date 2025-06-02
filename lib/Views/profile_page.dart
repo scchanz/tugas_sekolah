@@ -12,6 +12,7 @@ class ProfileView extends StatefulWidget {
 class _ProfileViewState extends State<ProfileView> {
   String _username = '';
   String _password = '';
+  bool _isPasswordVisible = false;
 
   @override
   void initState() {
@@ -31,7 +32,8 @@ class _ProfileViewState extends State<ProfileView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profile'),
+        title: const Text('Profile', textAlign: TextAlign.center),
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.redAccent,
       ),
       body: Padding(
@@ -48,24 +50,75 @@ class _ProfileViewState extends State<ProfileView> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Profile Information',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  const Center(
+                    child: Icon(
+                      Icons.person,
+                      size: 80,
                       color: Colors.redAccent,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  const Center(
+                    child: Text(
+                      'Profile Information',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.redAccent,
+                      ),
                     ),
                   ),
                   const Divider(),
                   const SizedBox(height: 8),
-                  Text(
-                    'Username: $_username',
-                    style: const TextStyle(fontSize: 16),
+                  Row(
+                    children: [
+                      const Text(
+                        'Username:',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          _username,
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 8),
-                  Text(
-                    'Password: $_password',
-                    style: const TextStyle(fontSize: 16),
+                  Row(
+                    children: [
+                      const Text(
+                        'Password:',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          _isPasswordVisible ? _password : '******',
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          _isPasswordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          color: Colors.redAccent,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _isPasswordVisible = !_isPasswordVisible;
+                          });
+                        },
+                      ),
+                    ],
                   ),
                 ],
               ),

@@ -62,7 +62,7 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Text('Home Page'),
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.blueAccent,
       ),
       body: Column(
         children: [

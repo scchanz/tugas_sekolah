@@ -14,13 +14,13 @@ class LogoutView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Logout', textAlign: TextAlign.center),
         automaticallyImplyLeading: false, // Disable the back button
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.blueAccent,
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () => _logout(context),
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.redAccent,
+            backgroundColor: Colors.blueAccent,
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),

@@ -11,7 +11,7 @@ class RecipeDetailView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(recipe.name, textAlign: TextAlign.center),
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -40,7 +40,7 @@ class RecipeDetailView extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
-                    color: Colors.redAccent,
+                    color: Colors.blueAccent,
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -51,7 +51,7 @@ class RecipeDetailView extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
-                    color: Colors.redAccent,
+                    color: Colors.blueAccent,
                   ),
                 ),
                 const SizedBox(height: 8),

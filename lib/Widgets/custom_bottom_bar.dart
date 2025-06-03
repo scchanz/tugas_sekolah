@@ -61,7 +61,7 @@ class BottomNavbar extends StatelessWidget {
       elevation: 0,
       currentIndex: currentIndex,
       onTap: (index) => _onItemTapped(context, index),
-      selectedItemColor: Colors.redAccent,
+      selectedItemColor: Colors.blueAccent,
       unselectedItemColor: Colors.grey,
       selectedLabelStyle: const TextStyle(
         fontWeight: FontWeight.bold,
@@ -76,7 +76,7 @@ class BottomNavbar extends StatelessWidget {
           icon: Icon(
             Icons.home,
             size: 28,
-            color: currentIndex == 0 ? Colors.redAccent : Colors.grey,
+            color: currentIndex == 0 ? Colors.blueAccent : Colors.grey,
           ),
           label: 'Home',
         ),
@@ -84,7 +84,7 @@ class BottomNavbar extends StatelessWidget {
           icon: Icon(
             Icons.person,
             size: 28,
-            color: currentIndex == 1 ? Colors.redAccent : Colors.grey,
+            color: currentIndex == 1 ? Colors.blueAccent : Colors.grey,
           ),
           label: 'Profile',
         ),
@@ -92,7 +92,7 @@ class BottomNavbar extends StatelessWidget {
           icon: Icon(
             Icons.logout,
             size: 28,
-            color: currentIndex == 2 ? Colors.redAccent : Colors.grey,
+            color: currentIndex == 2 ? Colors.blueAccent : Colors.grey,
           ),
           label: 'Logout',
         ),
